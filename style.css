@@ -1,0 +1,249 @@
+:root {
+    --background: #0F172A;      /* fundo principal */
+    --surface: #1E293B;         /* tabela/cards/navbar */
+    --surface-2: #334155;       /* hover */
+  
+    --primary: #3B82F6;         /* azul destaque */
+    --primary-hover: #2563EB;
+  
+    --text-primary: #F8FAFC;
+    --text-secondary: #CBD5E1;
+  
+    --border: #475569;
+
+    --nav: #1E293B;
+    --navborder: #334155;
+    --navcolor: #F8FAFC;
+    --navhover: #334155;
+  
+  
+
+}
+
+.light-mode {
+    --background: #F1F5F9;
+    --surface: #FFFFFF;
+    --surface-2: #E2E8F0;
+  
+    --primary: #2563EB;
+    --primary-hover: #1D4ED8;
+  
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+  
+    --border: #CBD5E1;
+  
+    --nav: #FFFFFF;
+    --navborder: #CBD5E1;
+    --navcolor: #0F172A;
+    --navhover: #E2E8F0;
+  }
+
+
+body { 
+    font-family: Arial, sans-serif; 
+    margin: 20px; 
+    background: var(--background);
+    color: var(--text-primary);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+table { 
+    width: 100%;
+    border-collapse: collapse; 
+    width: 100%; 
+    background: var(--surface);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 30px;
+    
+}
+td { 
+   padding: 14px;
+   border-bottom: 1px solid var(--border);
+   color: var(--text-secondary);
+}
+
+th { 
+    background: var(--primary);
+    color: white;
+    text-align: left;
+    padding: 14px;
+ }
+
+ .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 30px;
+    background: var(--nav);
+    border-bottom: 1px solid var(--navborder);
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--navcolor);
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background: var(--navhover);
+}
+
+#theme-toggle{
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: var(--surface);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#theme-toggle:hover{
+    background: var(--surface-2);
+    transform: scale(1.08);
+}
+
+#theme-icon{
+    width: 22px;
+    height: 22px;
+}
+
+footer{
+    margin-top: 40px;
+    padding: 20px;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.form-container {
+    max-width: 500px;
+    margin: 40px auto;
+    background: var(--surface);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 0 15px rgba(0,0,0,0.08);
+    color: var(--text-primary);
+}
+
+.form-container h2 {
+    margin-bottom: 25px;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.form-group input {
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--background);
+    color: var(--text-primary);
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.form-group input::placeholder {
+    color: var(--text-secondary);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.35);
+}
+
+.btn-cadastrar {
+    width: 100%;
+    padding: 12px;
+    background: var(--primary);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-cadastrar:hover {
+    background: var(--primary-hover);
+}
+
+.btn-novo-contato {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 12px 20px;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.btn-novo-contato:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+}
+
+.msg-erro {
+    background: rgba(220, 38, 38, 0.12);
+    border: 1px solid #DC2626;
+    color: #EF4444;
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    animation: desaparecer 0.5s ease forwards;
+    animation-delay: 3s;
+}
+
+@keyframes desaparecer {
+    to{
+        opacity: 0;
+        transform: translateY(-10px);
+        display: none;
+    }
+    
+}
